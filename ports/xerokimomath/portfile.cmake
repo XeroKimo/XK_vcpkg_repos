@@ -9,7 +9,7 @@ vcpkg_from_github(
 # Build:
     vcpkg_msbuild_install(
         SOURCE_PATH "${SOURCE_PATH}"
-        PROJECT_SUBPATH "3FD/3FD.vcxproj"
+        PROJECT_SUBPATH "xkMath/xkMath.vcxproj"
         TARGET Build
     )
 
