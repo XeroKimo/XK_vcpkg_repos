@@ -6,23 +6,16 @@ vcpkg_from_github(
 	HEAD_REF main
 )
 
-# Build:
-    vcpkg_msbuild_install(
-        SOURCE_PATH "${SOURCE_PATH}"
-        PROJECT_SUBPATH "xkMath/xkMath.vcxproj"
-        TARGET Build
-    )
+vcpkg_configure_cmake(
+	SOURCE_PATH "${SOURCE_PATH}"
+	PREFER_NINJA
+)
+vcpkg_install_cmake()
+vcpkg_fixup_cmake_targets()
 
-# vcpkg_configure_cmake(
-#	SOURCE_PATH "${SOURCE_PATH}"
-#	PREFER_NINJA
-# )
-# vcpkg_install_cmake()
-# vcpkg_fixup_cmake_targets()
-#
-# file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-#
-# file(
-#	INSTALL "${SOURCE_PATH}/LICENSE"
-#	DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
-#	RENAME copyright)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+
+file(
+	INSTALL "${SOURCE_PATH}/LICENSE"
+	DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+	RENAME copyright)right)
