@@ -1,6 +1,6 @@
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
-	REPO XeroKimo/xkMath
+	REPO xerokimo/xkmath
 	REF 26a260b2d39cd3a3e120e6b3598cf4bddaa4f526
 	SHA512 0
 	HEAD_REF main
